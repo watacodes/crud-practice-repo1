@@ -34,6 +34,11 @@ MongoClient.connect(process.env.MONGO_STRING,
         })
         .catch(error => console.error(error));
     });
+
+    app.put('/tasks', (req, res) => {
+      console.log(req.body);
+      
+    });
   
     app.listen(PORT, () => {
       console.log('server running on ', PORT);
