@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD App test</title>
+</head>
+<body>
+  <h1>CRUD App Playground</h1>
+  <p>Test test</p>
+
+  <!-- Creating form to send a post to server -->
+
+  <form action="/tasks" method="POST">
+    <input type="datetime-local" placeholder="date" name="date" id="date">
+    <input type="text" placeholder="task" name="task" id="task">
+    <input type="text" placeholder="completed" name="completed" id="completed">
+    <button type="submit" id="submit-button">Submit</button>
+  </form>
+
+  <h1>Tasks</h1>
+  
+  <ul class="tasks">
+    <% for (let i = 0; i < tasks.length; i++) {%>
+      <li class="task">
+        <span>Created Date: <%= tasks[i].date %></span>
+        <br>
+        <span>Task: <%= tasks[i].task %></span>
+        <br>
+        <span>Completed? <%= tasks[i].completed %></span>
+        <button type="submit">🗑️</button>
+      </li>
+    <% } %>
+  </ul>
+  <script src="/main.js"></script>
+</body>
+</html>
